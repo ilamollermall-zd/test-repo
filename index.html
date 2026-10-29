@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etoile — The lamp that floats on magnetism</title>
+  <meta name="description" content="Etoile is a dainty magnetic desk lamp. No cable on your desk, three dimmable settings, and a tone that runs from cold to warm." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a class="nav__brand" href="#">Étoile</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#design">Design</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <a class="nav__cta" href="#pricing">Reserve yours</a>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <!-- Architect's drawing sheet: elevation, dimensions, maker's notes -->
+    <div class="hero__media" role="img" aria-label="Architect-style elevation drawing of the Étoile lamp with dimensions, numbered detail callouts, a magnet-coupler detail, and a title block.">
+      <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs>
+          <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M50 0H0V50" fill="none" stroke="#14213D" stroke-width=".5" opacity=".05"/>
+          </pattern>
+          <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="7" stroke="#8E939B" stroke-width="1"/>
+          </pattern>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0L10 5L0 10z" fill="#14213D"/>
+          </marker>
+          <radialGradient id="glowYellow" cx=".5" cy=".5" r=".5">
+            <stop offset="0"   stop-color="#FFF6CC" stop-opacity=".95"/>
+            <stop offset=".4"  stop-color="#FFF0B8" stop-opacity=".45"/>
+            <stop offset="1"   stop-color="#FFF0B8" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glowBlur" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="14"/>
+          </filter>
+        </defs>
+
+        <!-- sheet -->
+        <rect width="1600" height="900" fill="#FFFFFF"/>
+        <rect width="1600" height="900" fill="url(#grid)"/>
+        <rect x="28" y="28" width="1544" height="844" fill="none" stroke="#DCDDE1" stroke-width="1.5"/>
+
+        <!-- lamp glow, revealed as the cursor approaches -->
+        <g id="lampGlow" opacity="0">
+          <circle cx="950" cy="272" r="135" fill="url(#glowYellow)" filter="url(#glowBlur)"/>
+        </g>
+
+        <!-- ===== ELEVATION ===== -->
+        <!-- centreline -->
+        <line x1="950" y1="238" x2="950" y2="742" stroke="#8E939B" stroke-width="1" stroke-dasharray="7 5"/>
+
+        <g id="elevation" fill="none" stroke="#14213D">
+          <!-- base puck -->
+          <rect x="918" y="691" width="64" height="9" rx="4.5" stroke-width="1.5"/>
+          <!-- stem -->
+          <rect x="947.8" y="286" width="4.4" height="405" stroke-width="1.2"/>
+          <!-- head, tilted -->
+          <g id="headEl" transform="rotate(-8 950 280)">
+            <rect x="911" y="276" width="78" height="7" rx="3.5" stroke-width="1.2"/>
+            <line id="lampBulb" x1="920" y1="285" x2="980" y2="285" stroke="#0B0D12" stroke-width="3" stroke-linecap="round"/>
+            <rect x="937" y="263" width="26" height="13" rx="6.5" stroke-width="1.2"/>
+          </g>
+        </g>
+
+        <!-- overall height dimension -->
+        <line x1="1040" y1="258" x2="1078" y2="258" stroke="#8E939B" stroke-width="1"/>
+        <line x1="1040" y1="700" x2="1078" y2="700" stroke="#8E939B" stroke-width="1"/>
+        <line x1="1068" y1="258" x2="1068" y2="700" stroke="#14213D" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+        <text transform="rotate(-90 1058 479)" x="1058" y="479" text-anchor="middle" font-size="13" letter-spacing="2" fill="#14213D">385 MM</text>
+
+        <!-- disc diameter dimension -->
+        <line x1="911" y1="268" x2="911" y2="236" stroke="#8E939B" stroke-width="1"/>
+        <line x1="989" y1="268" x2="989" y2="236" stroke="#8E939B" stroke-width="1"/>
+        <line x1="911" y1="240" x2="989" y2="240" stroke="#14213D" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+        <text x="950" y="230" text-anchor="middle" font-size="13" letter-spacing="2" fill="#14213D">&#216; 72</text>
+
+        <!-- base diameter dimension -->
+        <line x1="918" y1="704" x2="918" y2="724" stroke="#8E939B" stroke-width="1"/>
+        <line x1="982" y1="704" x2="982" y2="724" stroke="#8E939B" stroke-width="1"/>
+        <line x1="918" y1="720" x2="982" y2="720" stroke="#14213D" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+        <text x="950" y="744" text-anchor="middle" font-size="13" letter-spacing="2" fill="#14213D">&#216; 58</text>
+
+        <!-- ===== MAKER'S NOTES ===== -->
+        <g font-size="13" letter-spacing="1.6" fill="#14213D">
+          <circle cx="983" cy="264" r="2.5" fill="#14213D" stroke="none"/>
+          <line x1="983" y1="264" x2="1108" y2="206" stroke="#8E939B" stroke-width="1"/>
+          <text x="1118" y="210">01 &#8212; DISC HEAD &#183; 8&#176; RAKE &#183; 2700&#8211;5000 K</text>
+
+          <circle cx="953" cy="480" r="2.5" fill="#14213D" stroke="none"/>
+          <line x1="953" y1="480" x2="1108" y2="470" stroke="#8E939B" stroke-width="1"/>
+          <text x="1118" y="474">02 &#8212; STEM &#183; &#216; 8 MM &#183; BEAD-BLASTED</text>
+
+          <circle cx="984" cy="694" r="2.5" fill="#14213D" stroke="none"/>
+          <line x1="984" y1="694" x2="1098" y2="622" stroke="#8E939B" stroke-width="1"/>
+          <text x="1108" y="618">03 &#8212; MAGNETIC COUPLER</text>
+        </g>
+
+        <!-- ===== DETAIL A : the coupler ===== -->
+        <circle cx="950" cy="695" r="50" fill="none" stroke="#8E939B" stroke-width="1" stroke-dasharray="5 4"/>
+        <line x1="996" y1="712" x2="1292" y2="618" stroke="#8E939B" stroke-width="1"/>
+        <circle cx="1420" cy="640" r="115" fill="none" stroke="#14213D" stroke-width="1.2"/>
+        <g>
+          <!-- desk slab in section, hatched -->
+          <rect x="1310" y="625" width="220" height="43" fill="url(#hatch)" opacity=".55"/>
+          <line x1="1310" y1="625" x2="1530" y2="625" stroke="#14213D" stroke-width="1.5"/>
+          <line x1="1310" y1="668" x2="1530" y2="668" stroke="#14213D" stroke-width="1.5"/>
+          <!-- lamp puck above the slab -->
+          <rect x="1388" y="610" width="64" height="10" rx="4.5" fill="none" stroke="#14213D" stroke-width="1.5"/>
+          <!-- magnet plate beneath, cable stub -->
+          <rect x="1388" y="676" width="64" height="9" rx="3" fill="url(#hatch)" stroke="#14213D" stroke-width="1.2"/>
+          <path d="M1452 685 C 1462 695, 1456 700, 1462 706" fill="none" stroke="#14213D" stroke-width="1.5"/>
+          <!-- field path through the slab -->
+          <path d="M1382 616 C 1358 632, 1358 662, 1382 678" fill="none" stroke="#8E939B" stroke-width="1" stroke-dasharray="4 4"/>
+          <path d="M1458 616 C 1482 632, 1482 662, 1458 678" fill="none" stroke="#8E939B" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+        <text x="1420" y="782" text-anchor="middle" font-size="12.5" letter-spacing="2" fill="#14213D">DETAIL A &#8212; COUPLER &#183; SCALE 2:1</text>
+
+        <!-- ===== TITLE BLOCK ===== -->
+        <g stroke="#14213D" fill="none">
+          <rect x="1192" y="800" width="352" height="60" stroke-width="1.2"/>
+          <line x1="1390" y1="800" x2="1390" y2="860" stroke-width="1"/>
+        </g>
+        <g font-size="10.5" letter-spacing="1.2" fill="#14213D">
+          <text x="1206" y="826" font-weight="500">&#201;TOILE &#8212; DESK LIGHT</text>
+          <text x="1206" y="846" fill="#8E939B">ELEVATION &#183; SCALE 1:4</text>
+          <text x="1404" y="826">DWG 01</text>
+          <text x="1404" y="846" fill="#8E939B">STUDIO &#183; 2026</text>
+        </g>
+      </svg>
+    </div>
+
+   <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Étoile — Magnetic desk light</p>
+      <h1>The lamp that floats<br /><em>on magnetism.</em></h1>
+      <p class="hero__lede">
+        A slender stem rests on your desk. Its twin magnet hides beneath it,
+        cable folded into the wall. Slide Étoile anywhere across the surface —
+        there is nothing to plug in, nothing to trip over, nothing in the way.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--navy" href="#pricing">Reserve yours — $295</a>
+        <a class="btn btn--ghost" href="#features">How it works</a>
+      </div>
+      <ul class="hero__meta">
+        <li>3 dimmable settings</li>
+        <li>Cold&nbsp;&harr;&nbsp;warm tone</li>
+        <li>Free shipping, worldwide</li>
+      </ul>
+    </div>
+
+   </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="features" id="features">
+    <p class="eyebrow eyebrow--light">Why Étoile</p>
+    <h2 class="features__title">Nothing on the desk<br />but the light itself.</h2>
+
+    <div class="features__grid">
+
+      <article class="feature">
+        <span class="feature__num">01</span>
+        <div class="feature__glyph" aria-hidden="true">
+          <span class="glyph-magnet"></span>
+        </div>
+        <h3>Held by magnetism</h3>
+        <p>
+          A discreet steel puck sits beneath your desktop with the cable folded
+          neatly toward the wall. The lamp's small base locks to it through the
+          surface — held firmly, released by a gentle lift of the hand.
+        </p>
+      </article>
+
+      <article class="feature">
+        <span class="feature__num">02</span>
+        <div class="feature__glyph" aria-hidden="true">
+          <span class="glyph-slides"></span>
+        </div>
+        <h3>Three settings, cold to warm</h3>
+        <p>
+          A single touch on the stem steps through three dimmable levels.
+          Hold to sweep the tone of the light from a crisp working cool to a
+          low, candle-warm amber for the last hour of the day.
+        </p>
+      </article>
+
+      <article class="feature" id="design">
+        <span class="feature__num">03</span>
+        <div class="feature__glyph" aria-hidden="true">
+          <span class="glyph-lamp"></span>
+        </div>
+        <h3>Dainty by design</h3>
+        <p>
+          A slim tube, a floating disc of light, a base the size of a stone. Étoile takes
+          after the quiet Italian classics — present in the room, absent from
+          the view. Three finishes, no logos, no seams to speak of.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="pricing" id="pricing">
+    <p class="eyebrow">Pricing</p>
+    <h2 class="pricing__title">One lamp. Three finishes.</h2>
+    <p class="pricing__lede">$295 — every finish. Ships worldwide, free. 60 nights at your desk; return it if it doesn't earn its place.</p>
+
+    <div class="pricing__grid">
+
+      <button class="finish finish--selected" type="button">
+        <span class="finish__swatch finish__swatch--chrome" aria-hidden="true"></span>
+        <span class="finish__name">Brushed Chrome</span>
+        <span class="finish__desc">Cool, precise, quietly reflective</span>
+        <span class="finish__price">$295</span>
+      </button>
+
+      <button class="finish" type="button">
+        <span class="finish__swatch finish__swatch--black" aria-hidden="true"></span>
+        <span class="finish__name">Matte Black</span>
+        <span class="finish__desc">Draws the eye to the light, never the lamp</span>
+        <span class="finish__price">$295</span>
+      </button>
+
+      <button class="finish" type="button">
+        <span class="finish__swatch finish__swatch--white" aria-hidden="true"></span>
+        <span class="finish__name">Matte White</span>
+        <span class="finish__desc">Nearly disappears against a plaster wall</span>
+        <span class="finish__price">$295</span>
+      </button>
+
+    </div>
+
+    <a class="btn btn--navy btn--wide" href="#">Reserve Étoile — ships March</a>
+    <p class="pricing__fine">Reservations are fully refundable. No card required until dispatch.</p>
+
+    <!-- Early access -->
+    <form class="early" novalidate>
+      <h3 class="early__title">Request early access</h3>
+      <p class="early__hint">The first batch is limited to 500 lamps. We'll write before anyone else hears about it.</p>
+      <div class="early__row">
+        <input class="early__input" type="email" name="email" placeholder="you@studio.com"
+               aria-label="Your email address" autocomplete="email" />
+        <button class="btn btn--navy" type="submit">Request access</button>
+      </div>
+      <p class="early__error" hidden>Please enter a valid email address.</p>
+      <p class="early__thanks" hidden>Merci — you're on the list. We'll write when Étoile is ready.</p>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">Étoile</span>
+        <p>Desk light, held by magnetism.<br />Designed for the long hours.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div>
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Finishes</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">Our studio</a>
+          <a href="#">Journal</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="#">Shipping</a>
+          <a href="#">Returns</a>
+          <a href="#">Care guide</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Étoile Studio — a fiction, beautifully lit.</span>
+      <span>Privacy &nbsp;·&nbsp; Terms</span>
+    </div>
+  </footer>
+
+<script>
+  (function () {
+    var form = document.querySelector('.early');
+    if (!form) return;
+    var input = form.querySelector('.early__input');
+    var row = form.querySelector('.early__row');
+    var hint = form.querySelector('.early__hint');
+    var error = form.querySelector('.early__error');
+    var thanks = form.querySelector('.early__thanks');
+
+    input.addEventListener('input', function () {
+      input.classList.remove('early__input--invalid');
+      error.hidden = true;
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      if (!valid) {
+        error.hidden = false;
+        input.classList.add('early__input--invalid');
+        input.focus();
+        return;
+      }
+      row.hidden = true;
+      hint.hidden = true;
+      error.hidden = true;
+      thanks.hidden = false;
+      form.classList.add('early--done');
+    });
+  })();
+
+  // Lamp light: black when idle; turns on and glows softly
+  // as the cursor approaches the head of the lamp.
+  (function () {
+    var hero = document.querySelector('.hero');
+    var glow = document.getElementById('lampGlow');
+    var headEl = document.getElementById('headEl');
+    var bulb = document.getElementById('lampBulb');
+    if (!hero || !glow || !headEl || !bulb) return;
+
+    var REACH = 340;                       // px of influence around the head
+    var OFF = [11, 13, 18];                // #0B0D12 — light off
+    var ON  = [255, 232, 160];             // light yellow — light on
+
+    function mix(t) {
+      var c = OFF.map(function (o, i) { return Math.round(o + (ON[i] - o) * t); });
+      return 'rgb(' + c.join(',') + ')';
+    }
+
+    hero.addEventListener('mousemove', function (e) {
+      var r = headEl.getBoundingClientRect();
+      var d = Math.hypot(e.clientX - (r.left + r.width / 2),
+                         e.clientY - (r.top + r.height / 2));
+      var p = Math.max(0, 1 - d / REACH);  // 0 far → 1 at the lamp
+      glow.style.opacity = p.toFixed(3);
+      bulb.style.stroke = mix(p);
+    });
+
+    hero.addEventListener('mouseleave', function () {
+      glow.style.opacity = 0;
+      bulb.style.stroke = mix(0);
+    });
+  })();
+</script>
+</body>
+</html>
